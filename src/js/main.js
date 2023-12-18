@@ -12,12 +12,12 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // создание иконки маркера
 const createMarkerIcon = (color) => L.icon({
-    iconUrl: `https://leafletjs.com/examples/custom-icons/leaf-${color}.png` || 'https://leafletjs.com/examples/custom-icons/leaf-green.png',
-    shadowUrl: 'https://leafletjs.com/examples/custom-icons/leaf-shadow.png',
+    iconUrl: `./assets/img/${color}.svg` || './assets/img/violet.svg',
+    shadowUrl: './assets/img/shadow.png',
     iconSize: [38, 95],
-    shadowSize: [50, 64],
+    shadowSize: [60, 20],
     iconAnchor: [22, 94],
-    shadowAnchor: [4, 62],
+    shadowAnchor: [33, 22],
     popupAnchor: [-3, -76]
 });
 
@@ -31,9 +31,9 @@ const updateLocalStorage = () => {
 const addMarker = (lat, lng, type, name, description, color) => {
     const marker = L.marker([lat, lng], { draggable: true, icon: createMarkerIcon(color) }).addTo(map);
 
-    marker.bindPopup(`<b>${name}</b><br>${description}<br>Type: ${type}<br>
-        <button onclick="editMarker(${lat}, ${lng})">Edit</button>
-        <button onclick="removeMarker(${lat}, ${lng})">Remove</button>`);
+    marker.bindPopup(`<b>${name}</b><br>${description}<br>Тип: ${type}<br>
+        <button class="btn" onclick="editMarker(${lat}, ${lng})">Изменить</button>
+        <button class="btn" onclick="removeMarker(${lat}, ${lng})">Удалить</button>`);
 
     // добавляем обработчик события для обновления координат после перемещения
     marker.on('dragend', (event) => {
@@ -53,13 +53,19 @@ savedMarkers.forEach(marker => {
 // окно с формой при клике на карту
 map.on('click', function (e) {
     const popupContent = `<form id="marker-form">
-            <label for="type">Type:</label>
-            <input type="text" id="type" required><br>
-            <label for="name">Name:</label>
-            <input type="text" id="name" required><br>
-            <label for="description">Description:</label>
-            <textarea id="description"></textarea><br>
-            <button type="button" onclick="addMarkerFromForm(${e.latlng.lat}, ${e.latlng.lng})">Add Marker</button>
+            <div class="form-input">
+                <label class="label" for="type">Тип:</label>
+                <input class="input-map" type="text" id="type" required><br>
+            </div>
+            <div class="form-input">
+                <label class="label" for="name">Название:</label>
+                <input class="input-map" type="text" id="name" required><br>
+            </div>
+            <div class="form-input">
+                <label class="label" for="description">Описание:</label>
+                <textarea class="input-map" id="description"></textarea><br>
+            </div>
+            <button class="btn" type="button" onclick="addMarkerFromForm(${e.latlng.lat}, ${e.latlng.lng})">Добавить маркер</button>
         </form>`;
     L.popup().setLatLng(e.latlng).setContent(popupContent).openOn(map);
 });
@@ -69,7 +75,7 @@ const addMarkerFromForm = function (lat, lng) {
     const type = document.getElementById('type').value;
     const name = document.getElementById('name').value;
     const description = document.getElementById('description').value;
-    addMarker(lat, lng, type, name, description, 'green'); 
+    addMarker(lat, lng, type, name, description, 'violet'); 
     map.closePopup();
 }
 
@@ -79,19 +85,28 @@ const editMarker = function (lat, lng) {
 
     if (selectedMarker) {
         const popupContent = `<form id="edit-marker-form">
-                <label for="type">Type:</label>
-                <input type="text" id="edit-type" value="${selectedMarker.type}" required><br>
-                <label for="name">Name:</label>
-                <input type="text" id="edit-name" value="${selectedMarker.name}" required><br>
-                <label for="description">Description:</label>
-                <textarea id="edit-description">${selectedMarker.description}</textarea><br>
-                <label for="color">Marker Color:</label>
-                <select id="edit-color">
-                    <option value="green" ${selectedMarker.color === 'green' ? 'selected' : ''}>Green</option>
-                    <option value="red" ${selectedMarker.color === 'red' ? 'selected' : ''}>Red</option>
-                    <option value="orange" ${selectedMarker.color === 'orange' ? 'selected' : ''}>Orange</option>
-                </select><br>
-                <button type="button" onclick="saveEditedMarker(${selectedMarker.lat}, ${selectedMarker.lng})">Save</button>
+                <div class="form-input">
+                    <label class="label" for="type">Тип:</label>
+                    <input class="input-map" type="text" id="edit-type" value="${selectedMarker.type}" required><br>
+                </div>
+                <div class="form-input">
+                    <label class="label" for="name">Название:</label>
+                    <input class="input-map" type="text" id="edit-name" value="${selectedMarker.name}" required><br>
+                </div>
+                <div class="form-input">
+                    <label class="label" for="description">Описание:</label>
+                    <textarea class="input-map" id="edit-description">${selectedMarker.description}</textarea><br>
+                </div>
+                <div class="form-input">
+                    <label class="label" for="color">Цвет маркера:</label>
+                    <select class="input-map" id="edit-color">
+                        <option value="violet" ${selectedMarker.color === 'violet' ? 'selected' : ''}>Розовый</option>
+                        <option value="green" ${selectedMarker.color === 'green' ? 'selected' : ''}>Зеленый</option>
+                        <option value="red" ${selectedMarker.color === 'red' ? 'selected' : ''}>Красный</option>
+                        <option value="orange" ${selectedMarker.color === 'orange' ? 'selected' : ''}>Желтый</option>
+                    </select><br>
+                </div>
+                <button class="btn" type="button" onclick="saveEditedMarker(${selectedMarker.lat}, ${selectedMarker.lng})">Изменить</button>
             </form>`;
 
         selectedMarker.marker.closePopup();
@@ -110,9 +125,9 @@ const saveEditedMarker = function (lat, lng) {
         selectedMarker.color = document.getElementById('edit-color').value;
 
         selectedMarker.marker.setIcon(createMarkerIcon(document.getElementById('edit-color').value));
-        selectedMarker.marker.setPopupContent(`<b>${selectedMarker.name}</b><br>${selectedMarker.description}<br>Type: ${selectedMarker.type}<br>
-            <button onclick="editMarker(${selectedMarker.lat}, ${selectedMarker.lng})">Edit</button>
-            <button onclick="removeMarker(${selectedMarker.lat}, ${selectedMarker.lng})">Remove</button>`);
+        selectedMarker.marker.setPopupContent(`<b>${selectedMarker.name}</b><br>${selectedMarker.description}<br>Тип: ${selectedMarker.type}<br>
+            <button class="btn" onclick="editMarker(${selectedMarker.lat}, ${selectedMarker.lng})">Изменить</button>
+            <button class="btn" onclick="removeMarker(${selectedMarker.lat}, ${selectedMarker.lng})">Удалить</button>`);
 
         updateLocalStorage();
         map.closePopup();

@@ -44,17 +44,32 @@ body {
     margin-left: 1vw;
 }
 
-#controls {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 1000;
-    background-color: white;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.form-input {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1vh;
 }
 
-#filterInput {
-    margin-right: 10px;
+.label {
+    color: rgb(95, 12, 81);
+}
+
+.input-map {
+    border-radius: 10px;
+    border: 1px solid rgb(211, 59, 186);
+    padding-left: 1vw;
+    outline: none;
+}
+
+.btn {
+    background-color: rgb(243, 209, 240);
+    border: 1px solid rgb(115, 13, 98);
+    border-radius: 8px;
+    cursor: pointer;
+    color: rgb(82, 16, 71);
+    padding: 4px;
+}
+
+.btn:hover {
+    background-color: rgb(235, 181, 231);
 }
