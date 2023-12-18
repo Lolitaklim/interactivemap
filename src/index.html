@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интерактивная карта</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="./assets/styles.css">
+    <title>Interactive Map</title>
+</head>
+<body>
+    <p class="header">Интерактивная карта с маркерами</p>
+    <div class="container">
+        <div class="filter">
+            <label for="filter">Фильтрация маркеров по описанию: </label>
+            <input class="input" type="text" id="filter" oninput="filterMarkers()">
+        </div>
+        <div class="map" id="map"></div>
+    </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
