@@ -15,6 +15,6 @@ https://dolkalimona.ru/tetris/
 Репозиторий: https://github.com/Lolitaklim/tictactoe  
 https://dolkalimona.ru/tictactoe/  
 
-9. Калькулятор калорий 
+9. Калькулятор калорий  
 Репозиторий: https://github.com/Lolitaklim/caloriecalculator  
 https://dolkalimona.ru/calorie%D1%81alculator/  
