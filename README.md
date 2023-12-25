@@ -1,10 +1,10 @@
 7. Интерактивная карта с маркерами  
-Репозиторий: https://github.com/Lolitaklim/interactivemap  
 https://dolkalimona.ru/interactivemap/  
 
 Другие мини-проекты:  
 
 6. Игра «Угадай число».   
+Репозиторий: https://github.com/Lolitaklim/guessthenumber  
 https://dolkalimona.ru/guessthenumber/  
 
 3. Игра «Тетрис»  
