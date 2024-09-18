@@ -1,0 +1,159 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background:rgb(201, 72, 190); 
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(95, 12, 81);
+    margin: 4vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 78vh;
+    border-radius: 2vh;
+    background-color: rgb(235, 138, 225);
+    padding: 2vh;
+}
+
+.header {
+    position:relative;
+    text-align: center;
+    font-size: 4vw;
+    text-shadow: 0.1rem 0.2rem rgb(152, 19, 134);
+}
+
+.btn-clear-all {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 2vw;
+    margin-top: 2vh;
+}
+
+.add-product {
+    padding: 1vh 0 1vh 0;
+}
+
+.user-input {
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: rgb(239, 185, 234);
+    width: 49.6%;
+}
+
+::-webkit-input-placeholder { 
+    color: rgb(120, 27, 95);
+}
+
+.btn {
+    background-color: rgb(223, 156, 217);
+    border: 2px solid rgb(115, 13, 98);
+    padding: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: rgb(82, 16, 71);
+}
+
+.btn-add-product {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1vh;
+}
+
+th, td {
+    border: 1px solid #ebe8e8;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #de70d5;
+    position: relative;
+    
+    
+}
+
+.table-header-calories {
+    cursor: pointer;
+}
+
+.up-arrow::before {
+    content: '\25B2'; /* ▲ */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.down-arrow::before {
+    content: '\25BC'; /* ▼ */
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.diagram {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background: conic-gradient(rgb(204, 100, 216) 90%, rgb(169, 32, 176) 10%);
+}
+
+.chart-captions {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.entry {
+    display: flex;
+    gap: 1vw;
+    padding: 10px;
+}
+
+.entry-color {
+    height: 20px;
+    width: 20px;
+}
+
+.total {
+    background-color: rgb(204, 100, 216);
+}
+
+.eaten {
+    background-color: rgb(169, 32, 176);
+}
+
+.progress {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2vh;
+    align-items: center;
+}
+
+.daily {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.warning {
+    text-align: center;
+    padding: 5px;
+    color: rgb(223, 2, 76);
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Мои проекты</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: rgb(235, 138, 225);
+        color: #333;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        color: white;
+        margin-top: 50px;
+        text-shadow: 0.1rem 0.2rem rgb(152, 19, 134);
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+      }
+      .project {
+        background-color: rgb(201, 72, 190);
+        border-radius: 10px;
+        padding: 20px;
+        margin: 15px;
+        width: 200px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .project:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      }
+      .project a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Мини-проекты на JS, что посмотрим?</h1>
+
+    <div class="container">
+      <div class="project">
+        <a href="./caloriecalculator/index.html">Calorie Calculator</a>
+      </div>
+      <div class="project">
+        <a href="./guessthenumber/index.html">Guess The Number</a>
+      </div>
+      <div class="project">
+        <a href="./interactivemap/index.html">Interactive Map</a>
+      </div>
+      <div class="project">
+        <a href="./tetris/index.html">Tetris</a>
+      </div>
+      <div class="project">
+        <a href="./tictactoe/index.html">Tic-Tac-Toe</a>
+      </div>
+    </div>
+  </body>
+</html>

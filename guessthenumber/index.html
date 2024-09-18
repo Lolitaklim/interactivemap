@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Угадай число</title>
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <script src="./js/script.js" type="module"></script>
+</head>
+<body>
+    <div class="header">
+        <h1 class="logo">Guess the number</h1>
+        <button class="btn range-btn">range</button>
+    </div>
+    <div class="container">  
+        <ul class="list" id="output"></ul>
+        <form id="prompt" class="prompt">
+            <span>></span>
+            <input class="user-input" type="text" autocomplete="off" id="input">
+        </form>
+        <div class="restart">
+            <button class="btn restart-btn" id="restartBtn">Restart</button>
+        </div>
+    </div>
+    <div id="rangeModal" class="modal">
+        <div class="modal-content">
+            <button class="btn close-btn">x</button>
+            <p class="modal-header">Изменить диапазон:</p>
+            <form id="range">
+                <span>от</span>
+                <input class="user-input range-input" type="text" autocomplete="off" id="rangeMin">
+                <span>до</span>
+                <input class="user-input range-input" type="text" autocomplete="off" id="rangeMax">
+            </form>
+            <button class="btn" id="changeRangeBtn">Изменить</button>
+        </div>
+    </div>
+</body>
+</html>

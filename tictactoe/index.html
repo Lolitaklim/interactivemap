@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ticTacToe</title>
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <script src="./js/script.js" type="module"></script>
+</head>
+<body>
+    <h1 class="header">Tic Tac Toe </h1>
+    <div class="mode">
+        <div class="form_radio_btn">
+            <input id="radio-1" type="radio" name="gameMode" checked>
+            <label for="radio-1">2 players</label>
+        </div>
+        <div class="form_radio_btn">
+            <input id="radio-2" type="radio" name="gameMode" >
+            <label for="radio-2"> 1 player</label>
+        </div>
+    </div>
+    <div class="level" id="level">
+        <div class="form_radio_btn">
+            <input id="radio-3" type="radio" name="level">
+            <label for="radio-3">easy</label>
+        </div>
+        <div class="form_radio_btn">
+            <input id="radio-4" type="radio" name="level" checked>
+            <label for="radio-4">hard</label>
+        </div>
+    </div>
+    <div class="wrap" id="wrap">
+        <div class="cell" data-num="0"></div>
+        <div class="cell" data-num="1"></div>
+        <div class="cell" data-num="2"></div>
+        <div class="cell" data-num="3"></div>
+        <div class="cell" data-num="4"></div>
+        <div class="cell" data-num="5"></div>
+        <div class="cell" data-num="6"></div>
+        <div class="cell" data-num="7"></div>
+        <div class="cell" data-num="8"></div>
+    </div>
+    <button class="restart" id="restart">Restart</button>
+</body>
+</html>

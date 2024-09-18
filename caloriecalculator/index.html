@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор калорий</title>
+    <link rel="stylesheet" href="./assets/styles/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="header">Калькулятор калорий <button class="btn btn-clear-all" onclick="clearAll()">Очистить все данные</button></h1>
+
+      <div class="progress">
+        <div id="diagram" class="diagram"></div>
+
+        <div class="chart-captions">
+          <div class="entry">
+            <div class="total entry-color" ></div>
+            <div class="entry-text">Дневная цель: <span id="dailyGoal">0</span> ккал</div>
+          </div>
+          <div class="entry">
+            <div class="eaten entry-color" ></div>
+            <div class="entry-text">Съедено калорий: <span id="totalEating">0</span> ккал</div>
+          </div>
+        </div>
+
+        <div class="daily">
+          <label for="dailyGoal">Установить дневную цель (ккал):</label>
+          <input class="user-input daily-input" type="number" id="dailyGoalInput" placeholder="Дневная цель">
+          <button class="btn" onclick="setDailyGoal()">Установить</button>
+        </div>
+      </div>
+    
+      <p id="warning" class="warning"></p>
+
+      <p class="title">Добавить продукт:</p>
+
+      <div class="add-product">
+        <input class="user-input" type="text" id="foodName" placeholder="> Название продукта">
+        <input class="user-input" type="number" id="calories" placeholder="> Калорийность">
+      </div>
+      <div class="btn-add-product">
+        <button class="btn" onclick="addFood()">Добавить продукт</button>
+      </div>
+      <p class="title">Съеденные продукты:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Продукт <input class="user-input"  type="text" id="filter" placeholder="> Фильтр по названию"></th>
+            <th onclick="sortTable()" class="table-header-calories">Калории (ккал) <span class="up-arrow" id="upArrow"></span><span class="down-arrow" id="downArrow"></span></th>
+            <th>Удалить</th>
+          </tr>
+        </thead>
+        <tbody id="foodList"></tbody>
+      </table>
+   </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
