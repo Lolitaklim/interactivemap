@@ -27,18 +27,18 @@
       .project {
         background-color: rgb(201, 72, 190);
         border-radius: 10px;
-        padding: 20px;
+        padding: 10px;
         margin: 15px;
         width: 200px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         transition: transform 0.3s, box-shadow 0.3s;
+        text-decoration: none;
       }
       .project:hover {
         transform: scale(1.05);
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
       }
-      .project a {
-        text-decoration: none;
+      .project p {
         color: white;
         font-size: 18px;
         font-weight: bold;
@@ -49,21 +49,21 @@
     <h1>Мини-проекты на JS, что посмотрим?</h1>
 
     <div class="container">
-      <div class="project">
-        <a href="./caloriecalculator/index.html">Calorie Calculator</a>
-      </div>
-      <div class="project">
-        <a href="./guessthenumber/index.html">Guess The Number</a>
-      </div>
-      <div class="project">
-        <a href="./interactivemap/index.html">Interactive Map</a>
-      </div>
-      <div class="project">
-        <a href="./tetris/index.html">Tetris</a>
-      </div>
-      <div class="project">
-        <a href="./tictactoe/index.html">Tic-Tac-Toe</a>
-      </div>
+      <a href="./caloriecalculator/index.html" class="project">
+        <p>Calorie Calculator</p>
+      </a>
+      <a href="./guessthenumber/index.html" class="project">
+        <p>Guess The Number</p>
+      </a>
+      <a href="./interactivemap/index.html" class="project">
+        <p>Interactive Map</p>
+      </a>
+      <a href="./tetris/index.html" class="project">
+        <p>Tetris</p>
+      </a>
+      <a href="./tictactoe/index.html" class="project">
+        <p>Tic-Tac-Toe</p>
+      </a>
     </div>
   </body>
 </html>
